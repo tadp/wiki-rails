@@ -1,0 +1,10 @@
+<h1> Edit your article</h1>
+
+<%= form_for :page, url: page_path(@page), method: :put do |f| %>
+	<%= f.text_field :title %>
+	<%= f.text_area :content %>
+	<%= f.submit %>
+<% end %>
+
+<%= link_to 'Show', @page %>
+<%= link_to 'Back', pages_path %>

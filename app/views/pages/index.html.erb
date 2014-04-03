@@ -1,0 +1,21 @@
+<!-- Page model needs:  Previous page name column, Content -->
+<table>
+	<tr>
+		<th> Name </th>
+	</tr>
+	<% @pages.each do |page| %>
+	<tr>
+	  <td><%= link_to page.title + "_with_id_"+ page.id.to_s, page_path(page) %></td>
+	  <td><%= link_to 'Edit', edit_page_path(page) %></td>
+	  <td><%= link_to 'Delete', page_path(page), method: :delete %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<%= link_to 'New Page', new_page_path %>
+<br>
+<br>
+<br>
+<% @wikis.each do |wiki| %>
+  <%= link_to wiki.name, page_path(wiki) %>
+<% end %>

@@ -1,0 +1,102 @@
+                     <!DOCTYPE html>
+                     <html>
+                     <head>
+                     <title>app/views/pages/new.html.erb</title>
+                     <style type="text/css">
+                     
+                     body          { font-family:      Helvetica,Arial,Verdana,sans-serif;
+                                     font-size:        18px;
+                                   }
+                     th            { background-color: #D4C7BA;
+                                     color:            #c00; 
+                                   }
+                     div           { margin:           20px;
+                                     padding:          20px;
+                                     border:           2px solid black;
+                                     height:           650px;
+                                     width:            600px;
+                                     overflow:         scroll;
+                                     white-space:      nowrap;
+                                   }
+                     .code_holder  { background-color: #CFCAC4;
+                                     position:         absolute;
+                                     left:             20px;
+                                     top:              150px;
+                                     margin:           0 auto;
+                                     border-radius:    10px;
+                                     box-shadow:       3px 3px 5px 6px #ccc;
+                                   }
+                     .odd td       { background-color: #F4EEE7;}
+                     .even td      { background-color: #EEE3D6;}
+                     .minus        { color:            red; }
+                     .plus         { color:            green;}
+                     </style>
+                     <script type="text/javascript">
+                       function setupHandlers(){
+                         var leftBox = document.getElementById("left_diff_box");
+                         var rightBox = document.getElementById("right_diff_box");
+ 
+                         leftBox.onscroll = function(e) {
+                            rightBox.scrollTop = leftBox.scrollTop;
+                            rightBox.scrollLeft = leftBox.scrollLeft;
+                         };
+                         rightBox.onscroll = function(e) {
+                            leftBox.scrollTop = rightBox.scrollTop;
+                            leftBox.scrollLeft = rightBox.scrollLeft;
+                         };
+                       }
+                     </script>
+                     </head>
+                     <body onload="setupHandlers()">
+                     <table class="code_holder">
+                      <tr>
+                        <th>master:app/views/pages/new.html.erb</th>
+                        <th>qa:app/views/pages/new.html.erb</th>
+                      </tr>
+                      <tr valign="top">
+                        <td>
+                          <div id="left_diff_box">
+                            <table>
+                                <tr class='even'><td>1</td><td><pre><span class='no_color'>&lt;%= form_for(@page) do |f| %&gt;
+</span></pre></td></tr><tr class='odd'><td>2</td><td><pre><span class='no_color'>	&lt;%= f.text_field :title %&gt;
+</span></pre></td></tr><tr class='even'><td>3</td><td><pre><span class='no_color'>	&lt;%= f.text_area :content %&gt;
+</span></pre></td></tr><tr class='odd'><td>4</td><td><pre><span class='no_color'>	&lt;button type='submit'&gt; Submit &lt;/button&gt;
+</span></pre></td></tr><tr class='even'><td>5</td><td><pre><span class='no_color'>&lt;% end %&gt;
+</span></pre></td></tr><tr class='odd'><td>6</td><td><pre><span class='no_color'>
+</span></pre></td></tr><tr class='even'><td>7</td><td><pre><span class='no_color'> 	&lt;button type='submit'&gt; Submit &lt;/button&gt;
+</span></pre></td></tr><tr class='odd'><td>8</td><td><pre><span class='no_color'> &lt;% end %&gt;
+</span></pre></td></tr><tr class='even'><td>9</td><td><pre><span class='no_color'> 
+</span></pre></td></tr><tr class='odd'><td>10</td><td><pre><span class='minus'>-&lt;!-- Preview area --&gt;
+</span></pre></td></tr><tr class='even'><td>11</td><td><pre><span class='no_color'> &lt;br&gt;
+</span></pre></td></tr><tr class='odd'><td>12</td><td><pre><span class='no_color'> &lt;br&gt;
+</span></pre></td></tr><tr class='even'><td>13</td><td><pre><span class='no_color'> &lt;br&gt;
+</span></pre></td></tr><tr class='odd'><td>14</td><td><pre><span class='no_color'>&lt;br&gt;
+</span></pre></td></tr><tr class='even'><td>15</td><td><pre><span class='no_color'>Preview area</span></pre></td></tr>
+                            </table>
+                          </div>
+                        </td>
+                        <td>
+                          <div id="right_diff_box">
+                            <table>
+                              <tr class='even'><td>1</td><td><pre><span class='no_color'>&lt;%= form_for(@page) do |f| %&gt;
+</span></pre></td></tr><tr class='odd'><td>2</td><td><pre><span class='no_color'>	&lt;%= f.text_field :title %&gt;
+</span></pre></td></tr><tr class='even'><td>3</td><td><pre><span class='no_color'>	&lt;%= f.text_area :content %&gt;
+</span></pre></td></tr><tr class='odd'><td>4</td><td><pre><span class='no_color'>	&lt;button type='submit'&gt; Submit &lt;/button&gt;
+</span></pre></td></tr><tr class='even'><td>5</td><td><pre><span class='no_color'>&lt;% end %&gt;
+</span></pre></td></tr><tr class='odd'><td>6</td><td><pre><span class='no_color'>
+</span></pre></td></tr><tr class='even'><td>7</td><td><pre><span class='no_color'> 	&lt;button type='submit'&gt; Submit &lt;/button&gt;
+</span></pre></td></tr><tr class='odd'><td>8</td><td><pre><span class='no_color'> &lt;% end %&gt;
+</span></pre></td></tr><tr class='even'><td>9</td><td><pre><span class='no_color'> 
+</span></pre></td></tr><tr class='odd'><td>10</td><td><pre><span class='plus'>+&lt;!-- This is the Preview area --&gt;
+</span></pre></td></tr><tr class='even'><td>11</td><td><pre><span class='no_color'> &lt;br&gt;
+</span></pre></td></tr><tr class='odd'><td>12</td><td><pre><span class='no_color'> &lt;br&gt;
+</span></pre></td></tr><tr class='even'><td>13</td><td><pre><span class='no_color'> &lt;br&gt;
+</span></pre></td></tr><tr class='odd'><td>14</td><td><pre><span class='no_color'>&lt;br&gt;
+</span></pre></td></tr><tr class='even'><td>15</td><td><pre><span class='no_color'>Preview area</span></pre></td></tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                     </table>
+                     </body>
+                     </html>

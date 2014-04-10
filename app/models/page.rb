@@ -1,10 +1,11 @@
 class Page < ActiveRecord::Base
   attr_accessible :name, :title, :content
-  after_create :create_page
-  after_update :update_page
+  # after_create :create_page
+  # after_update :update_page
   has_many :edits, class_name: "Page", foreign_key: "document_id"
   belongs_to :document, class_name: "Page"
   validates_uniqueness_of :name, if: :original_document?, on: :create
+  validate :ensure_title_or_content
 
 	def create_page
     begin
@@ -15,7 +16,6 @@ class Page < ActiveRecord::Base
       }
       wiki.write_page(name, :markdown, content, commit)
       rescue => e
-        # binding.pry
         logger.warn "#{e}"
     end
 	end
@@ -40,7 +40,6 @@ class Page < ActiveRecord::Base
 
   def self_wiki
     wiki.page(self.name)
-    binding.pry
   end
 
   def wiki
@@ -53,5 +52,13 @@ class Page < ActiveRecord::Base
 
   def original_document?
     !document
+  end
+
+  private
+
+  def ensure_title_or_content
+    unless title.present? or content.present?
+      errors.add(:title, "Must provide a title or content")
+    end
   end
 end

@@ -1,0 +1,89 @@
+                     <!DOCTYPE html>
+                     <html>
+                     <head>
+                     <title>config/initializers/gollum.rb</title>
+                     <style type="text/css">
+                     
+                     body          { font-family:      Helvetica,Arial,Verdana,sans-serif;
+                                     font-size:        18px;
+                                   }
+                     th            { background-color: #D4C7BA;
+                                     color:            #c00; 
+                                   }
+                     div           { margin:           20px;
+                                     padding:          20px;
+                                     border:           2px solid black;
+                                     height:           650px;
+                                     width:            600px;
+                                     overflow:         scroll;
+                                     white-space:      nowrap;
+                                   }
+                     .code_holder  { background-color: #CFCAC4;
+                                     position:         absolute;
+                                     left:             20px;
+                                     top:              150px;
+                                     margin:           0 auto;
+                                     border-radius:    10px;
+                                     box-shadow:       3px 3px 5px 6px #ccc;
+                                   }
+                     .odd td       { background-color: #F4EEE7;}
+                     .even td      { background-color: #EEE3D6;}
+                     .minus        { color:            red; }
+                     .plus         { color:            green;}
+                     </style>
+                     <script type="text/javascript">
+                       function setupHandlers(){
+                         var leftBox = document.getElementById("left_diff_box");
+                         var rightBox = document.getElementById("right_diff_box");
+ 
+                         leftBox.onscroll = function(e) {
+                            rightBox.scrollTop = leftBox.scrollTop;
+                            rightBox.scrollLeft = leftBox.scrollLeft;
+                         };
+                         rightBox.onscroll = function(e) {
+                            leftBox.scrollTop = rightBox.scrollTop;
+                            leftBox.scrollLeft = rightBox.scrollLeft;
+                         };
+                       }
+                     </script>
+                     </head>
+                     <body onload="setupHandlers()">
+                     <table class="code_holder">
+                      <tr>
+                        <th>master:config/initializers/gollum.rb</th>
+                        <th>qa:config/initializers/gollum.rb</th>
+                      </tr>
+                      <tr valign="top">
+                        <td>
+                          <div id="left_diff_box">
+                            <table>
+                                <tr class='even'><td>1</td><td><pre><span class='no_color'>class GollumRepo &lt; ApplicationController
+</span></pre></td></tr><tr class='odd'><td>2</td><td><pre><span class='no_color'>  require 'gollum-lib'
+</span></pre></td></tr><tr class='even'><td>3</td><td><pre><span class='no_color'>  Wiki = Gollum::Wiki.new('db/wiki.git')
+</span></pre></td></tr><tr class='odd'><td>4</td><td><pre><span class='no_color'> class GollumRepo &lt; ApplicationController
+</span></pre></td></tr><tr class='even'><td>5</td><td><pre><span class='no_color'>   require 'gollum-lib'
+</span></pre></td></tr><tr class='odd'><td>6</td><td><pre><span class='no_color'>   Wiki = Gollum::Wiki.new('db/wiki.git')
+</span></pre></td></tr><tr class='even'><td>7</td><td><pre><span class='no_color'> end
+</span></pre></td></tr>
+                            </table>
+                          </div>
+                        </td>
+                        <td>
+                          <div id="right_diff_box">
+                            <table>
+                              <tr class='even'><td>1</td><td><pre><span class='no_color'>class GollumRepo &lt; ApplicationController
+</span></pre></td></tr><tr class='odd'><td>2</td><td><pre><span class='no_color'>  require 'gollum-lib'
+</span></pre></td></tr><tr class='even'><td>3</td><td><pre><span class='no_color'>  Wiki = Gollum::Wiki.new('db/wiki.git')
+</span></pre></td></tr><tr class='odd'><td>4</td><td><pre><span class='no_color'> class GollumRepo &lt; ApplicationController
+</span></pre></td></tr><tr class='even'><td>5</td><td><pre><span class='no_color'>   require 'gollum-lib'
+</span></pre></td></tr><tr class='odd'><td>6</td><td><pre><span class='no_color'>   Wiki = Gollum::Wiki.new('db/wiki.git')
+</span></pre></td></tr><tr class='even'><td>7</td><td><pre><span class='plus'>+  
+</span></pre></td></tr><tr class='odd'><td>8</td><td><pre><span class='no_color'> end
+</span></pre></td></tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                     </table>
+                     </body>
+                     </html>

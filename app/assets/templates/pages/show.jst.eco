@@ -1,0 +1,16 @@
+<header class="title-container">
+  <input type="text" class="page-title" value="<%= @page.get("title") %>"
+   placeholder="Title..."/>
+</header>
+<div class="body">
+  <textarea class="page-content" placeholder="Content..."><%= @page.get("content") %></textarea>
+</div>
+
+<div class="normal-footer">
+  <%= @page.get("updated_at") %>
+</div>
+<div class="editing-footer">
+  <button class="save">Save</button>
+</div>
+
+<button class="destroy-page" tabindex="-1">Remove</button>

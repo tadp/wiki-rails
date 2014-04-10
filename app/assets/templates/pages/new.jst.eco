@@ -1,0 +1,8 @@
+
+Title: <input type = "text" class="page-title" />
+<br>
+Content: <textarea class="page-content"></textarea>
+<br>
+<input type="submit" />
+
+Hello from new

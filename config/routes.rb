@@ -1,9 +1,11 @@
 Wikitest::Application.routes.draw do
-
   root :to => 'pages#index'
-  resources :pages
 
-  get '/pages/:id', controller: 'pages', action: 'show'
+  
+  resources :pages, only: [:index, :create, :update, :destroy]
+
+  get '*any' => 'pages#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
